@@ -1,0 +1,8 @@
+.completed{
+    text-decoration: line-through;
+    font-weight: lighter;
+}
+
+.incomplete{
+    color: red
+}

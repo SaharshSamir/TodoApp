@@ -1,0 +1,12 @@
+.todoItem{
+   
+    
+    display: flex;
+    flex-direction: row;    
+}
+
+.checkBox{
+    display: inline-block;
+    margin: auto
+}
+
