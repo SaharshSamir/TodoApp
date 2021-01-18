@@ -6,6 +6,8 @@ import * as actions from '../redux/actionsCreators'
 
 class TodoList extends Component {
 
+
+
     isDone = (e) => {
         var todoId = e.target.parentElement.nextSibling.id;
         this.props.isDone(todoId);
@@ -18,6 +20,7 @@ class TodoList extends Component {
 
 
     renderTodo(){
+        console.log(this.props.state)
         return this.props.tasks.map(todo => {
             return( 
                 

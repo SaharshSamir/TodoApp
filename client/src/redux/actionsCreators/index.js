@@ -15,7 +15,7 @@ export const isDone = (id) => {
         dispatch({
             type: 'TOGGLE_DONE',
             payload: {
-                id: id,
+                id,
                 done: true
             }
         })

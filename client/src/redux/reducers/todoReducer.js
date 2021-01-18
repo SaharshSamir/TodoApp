@@ -18,20 +18,22 @@ export default function(state=initialState, action) {
             }
         
         case 'TOGGLE_DONE':
-            return ({
+            return {
                 ...state,
                 tasks : state.tasks.map(task => {
-                    if(task.id !== action.payload.id){
+                    if(task.id != action.payload.id){
+                        console.log("if statement")
                         return task
                     }
                     else{
+                        console.log("else statement")
                         return {
                             ...task,
                             done: !task.done
                         };
                     };
                 })
-            });
+            };
 
             case 'DELETE_TODO':
                 id--;
