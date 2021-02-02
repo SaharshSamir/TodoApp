@@ -3,6 +3,12 @@ input:focus{
 }
 body{
     background-color: #1a273b;
+    margin: 0;
+    padding: 0;
+}
+
+a{
+    cursor: pointer;
 }
 
 input{
