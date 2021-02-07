@@ -4,8 +4,12 @@ const passport = require("passport");
 const cookieSession = require("cookie-session");
 const mongoose = require("mongoose");
 const keys = require("./config/keys");
+const bodyParser = require("body-parser");
 require("./models/Users");
+require("./models/Todos");
 require("./services/passport");
+
+app.use(bodyParser.json());
 
 //the three middlewares to modify the incoming req.
 //1.
@@ -26,6 +30,7 @@ mongoose.connect(keys.mongoURI);
 
 const PORT = process.env.PORT || 5000;
 require("./routes/authRoutes")(app);
+require("./routes/todoRoutes")(app);
 
 app.listen(PORT, () => {
   console.log(`Listening on Port ${PORT}`);

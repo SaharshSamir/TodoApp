@@ -6,9 +6,12 @@ import { applyMiddleware, createStore } from "redux";
 import { Provider } from "react-redux";
 import reportWebVitals from "./reportWebVitals";
 import reducers from "./redux/reducers";
+import axios from "axios";
 const reduxThunk = require("redux-thunk").default;
 
 const store = createStore(reducers, {}, applyMiddleware(reduxThunk));
+
+window.axios = axios;
 
 ReactDOM.render(
   <React.StrictMode>

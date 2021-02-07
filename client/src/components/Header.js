@@ -30,7 +30,7 @@ class Header extends Component {
     return (
       <div className="m-5" style={{ height: "10px" }}>
         <nav className="navbar mx-5 nav fixed-top navbar-dark bg-dark p-2">
-          <a className="navbar-brand mx-1" href="#">
+          <a className="navbar-brand mx-1" href="/">
             Todo
           </a>
 

@@ -5,6 +5,9 @@ import styles from "../styling/todoList.module.css";
 import * as actions from "../redux/actionsCreators";
 
 class TodoList extends Component {
+  componentDidMount() {
+    this.props.fetchTodos();
+  }
   isDone = e => {
     var todoId = e.target.parentElement.nextSibling.id;
     this.props.isDone(todoId);

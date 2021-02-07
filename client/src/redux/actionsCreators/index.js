@@ -40,3 +40,30 @@ export const fetchUser = () => {
     dispatch({ type: "FETCH_USER", payload: res.data });
   };
 };
+
+export const saveTodos = todos => {
+  return async dispatch => {
+    const res = await axios.post("/api/save_todos", {
+      todos
+    });
+    dispatch({ type: "TODO_SAVED", payload: res.data });
+  };
+};
+
+export const deleteTodos = deletedTodos => {
+  return async dispatch => {
+    const res = await axios.post("/api/delete_todos", {
+      deletedTodos
+    });
+    dispatch({ type: "TODO_DELETED", payload: res.data });
+  };
+};
+
+export const fetchTodos = () => {
+  return async dispatch => {
+    const res = await axios.get("/api/get_todos");
+
+    console.log(res.data);
+    dispatch({ type: "FETCH_TODOS", payload: res.data });
+  };
+};

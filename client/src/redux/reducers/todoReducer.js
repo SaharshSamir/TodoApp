@@ -1,5 +1,6 @@
 const initialState = {
-  tasks: []
+  tasks: [],
+  deletedTodos: []
 };
 
 var id = 0;
@@ -35,7 +36,26 @@ export default function(state = initialState, action) {
       id--;
       return {
         ...state,
-        tasks: state.tasks.filter(task => task.id !== action.payload)
+        tasks: state.tasks.filter(task => task.id !== action.payload),
+        // deletedTodos: state.tasks.filter(task => task.id === action.payload)
+        deletedTodos: state.deletedTodos.concat(
+          state.tasks.filter(task => task.id === action.payload)
+        )
+      };
+
+    case "TODO_SAVED" || "TODO_DELETED":
+      // console.log(action.payload);
+      return {
+        ...state,
+        deletedTodos: []
+      };
+
+    case "FETCH_TODOS":
+      const { userTodos } = action.payload;
+      console.log(userTodos);
+      return {
+        ...state,
+        tasks: state.tasks.concat(userTodos)
       };
 
     default:
