@@ -17,8 +17,12 @@ class Header extends Component {
         ];
       default:
         return [
-          <a className="nav-item nav-link mx-3" key="backpack" href="#">
-            Backpack
+          <a
+            className="nav-item nav-link mx-3"
+            key="dashboard"
+            href="/dashboard"
+          >
+            Dashboard
           </a>,
           <a className="nav-item nav-link mx-3" key="logout" href="/api/logout">
             Logout
